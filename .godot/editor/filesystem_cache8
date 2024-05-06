@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715026839
+icon.svg::CompressedTexture2D::2977912514772869902::1715003365::1715003376::1::::<><>::
+::res://assets/::1715026839
+checkers.jpg::CompressedTexture2D::2941166750548548945::1715003411::1715003414::1::::<><>::
+mojga.jpg::CompressedTexture2D::4427772981935293910::1715003445::1715003445::1::::<><>::
+resha.png::CompressedTexture2D::6415289833218399830::1715026835::1715026840::1::::<><>::
+::res://scene/::1715005044
+game.tscn::PackedScene::6995568589974397777::1715005044::0::1::::<><>::uid://bh5yt7gsrgpen::::res://assets/checkers.jpg<>uid://b4c31k4qyhccs::::res://assets/mojga.jpg<>res://scripts/kuda_clicat.gd
+::res://scripts/::1715025846
+kuda_clicat.gd::GDScript::-1::1715005044::0::1::::<>Sprite2D<>::

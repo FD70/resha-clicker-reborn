@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6wx80purdtp6"]
+
+[ext_resource type="Texture2D" uid="uid://bh5yt7gsrgpen" path="res://assets/checkers.jpg" id="1_0xdij"]
+[ext_resource type="Texture2D" uid="uid://b4c31k4qyhccs" path="res://assets/mojga.jpg" id="2_qxjdm"]
+[ext_resource type="Script" path="res://scripts/kuda_clicat.gd" id="3_upc4y"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Checkers" type="Sprite2D" parent="."]
+position = Vector2(107, 117)
+texture = ExtResource("1_0xdij")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="kuda_clicat" type="Sprite2D" parent="."]
+position = Vector2(4, -25)
+scale = Vector2(0.692982, 0.692982)
+texture = ExtResource("2_qxjdm")
+script = ExtResource("3_upc4y")
+
+[node name="Label" type="Label" parent="kuda_clicat"]
+offset_left = -92.3545
+offset_top = -161.62
+offset_right = 18.6455
+offset_bottom = -138.62
+text = "0
+"
+horizontal_alignment = 1
