@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dvtef1n25m5vv"
+path="res://.godot/imported/resha_bmp.bmp-2a95c774ff4c0ae776993533231007bd.res"
+
+[deps]
+
+source_file="res://assets/sprites/resha_bmp.bmp"
+dest_files=["res://.godot/imported/resha_bmp.bmp-2a95c774ff4c0ae776993533231007bd.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

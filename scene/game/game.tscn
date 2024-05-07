@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6wx80purdtp6"]
+[gd_scene load_steps=7 format=3 uid="uid://c6wx80purdtp6"]
 
 [ext_resource type="Script" path="res://scene/game/game.gd" id="1_l1hgl"]
-[ext_resource type="Texture2D" uid="uid://bh5yt7gsrgpen" path="res://assets/sprites/background.jpg" id="2_616cq"]
-[ext_resource type="FontFile" uid="uid://bg5j0mhqg6ana" path="res://assets/fonts/PixelOperator8.ttf" id="3_ufcml"]
+[ext_resource type="FontFile" uid="uid://oxc0kcukr4md" path="res://assets/fonts/wheaton capitals.ttf" id="3_gb5yl"]
+[ext_resource type="Shader" path="res://shaders/outliner.gdshader" id="3_n2x16"]
 [ext_resource type="Texture2D" uid="uid://cxnu5er4hdves" path="res://assets/sprites/resha.png" id="4_s8jcm"]
+[ext_resource type="BitMap" uid="uid://dvtef1n25m5vv" path="res://assets/sprites/resha_bmp.bmp" id="5_cblay"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7464"]
+shader = ExtResource("3_n2x16")
+shader_parameter/width = 16.0
+shader_parameter/outline_color = null
 
 [node name="Game" type="Node2D"]
+scale = Vector2(1, 0.997317)
 script = ExtResource("1_l1hgl")
 
 [node name="game_manager" type="Node" parent="."]
@@ -13,6 +20,14 @@ unique_name_in_owner = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.639216, 0.694118, 0.541176, 1)
 
 [node name="UI" type="CanvasLayer" parent="CanvasLayer"]
 
@@ -32,30 +47,33 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="background" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(584.54, 328.702)
-scale = Vector2(0.499928, 0.499928)
-texture = ExtResource("2_616cq")
-
 [node name="label_score" type="Label" parent="CanvasLayer"]
+texture_filter = 1
 offset_left = 14.0
 offset_top = 18.0
 offset_right = 269.0
 offset_bottom = 112.0
-theme_override_fonts/font = ExtResource("3_ufcml")
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_shadow_color = Color(0.203922, 0.305882, 0.254902, 1)
+theme_override_constants/shadow_outline_size = 14
+theme_override_fonts/font = ExtResource("3_gb5yl")
+theme_override_font_sizes/font_size = 70
 text = "70000000"
 
 [node name="resha_button" type="TextureButton" parent="CanvasLayer"]
-offset_left = 183.0
-offset_top = -127.0
-offset_right = 983.0
-offset_bottom = 673.0
-scale = Vector2(0.2, 0.2)
-pivot_offset = Vector2(400, 400)
+material = SubResource("ShaderMaterial_j7464")
+anchors_preset = -1
+offset_left = 335.0
+offset_top = -63.0
+offset_right = 1335.0
+offset_bottom = 937.0
+scale = Vector2(0.79817, 0.789791)
+pivot_offset = Vector2(500, 500)
 texture_normal = ExtResource("4_s8jcm")
-stretch_mode = 3
+texture_click_mask = ExtResource("5_cblay")
+stretch_mode = 0
 
 [connection signal="button_down" from="CanvasLayer/resha_button" to="." method="_on_resha_button_button_down"]
+[connection signal="button_up" from="CanvasLayer/resha_button" to="." method="_on_resha_button_button_up"]
 [connection signal="mouse_entered" from="CanvasLayer/resha_button" to="." method="_on_resha_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/resha_button" to="." method="_on_resha_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/resha_button" to="." method="_on_resha_button_pressed"]
