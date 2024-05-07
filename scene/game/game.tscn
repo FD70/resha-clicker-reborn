@@ -61,12 +61,11 @@ text = "70000000"
 
 [node name="resha_button" type="TextureButton" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_j7464")
-anchors_preset = -1
 offset_left = 335.0
 offset_top = -63.0
 offset_right = 1335.0
 offset_bottom = 937.0
-scale = Vector2(0.79817, 0.789791)
+scale = Vector2(0.808, 0.8)
 pivot_offset = Vector2(500, 500)
 texture_normal = ExtResource("4_s8jcm")
 texture_click_mask = ExtResource("5_cblay")
