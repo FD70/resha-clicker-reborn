@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh5yt7gsrgpen"
-path="res://.godot/imported/checkers.jpg-3280b8848560b502ee9668baf3de6901.ctex"
+uid="uid://cxnu5er4hdves"
+path="res://.godot/imported/resha.png-8fdc4a3a932b50c0fa6c651b87424321.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/checkers.jpg"
-dest_files=["res://.godot/imported/checkers.jpg-3280b8848560b502ee9668baf3de6901.ctex"]
+source_file="res://assets/sprites/resha.png"
+dest_files=["res://.godot/imported/resha.png-8fdc4a3a932b50c0fa6c651b87424321.ctex"]
 
 [params]
 

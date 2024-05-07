@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="test_05"
-run/main_scene="res://scene/game.tscn"
+run/main_scene="res://scene/game/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
 [input]
 

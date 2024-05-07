@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6wx80purdtp6"]
+
+[ext_resource type="Script" path="res://scene/game/game.gd" id="1_l1hgl"]
+[ext_resource type="Texture2D" uid="uid://bh5yt7gsrgpen" path="res://assets/sprites/background.jpg" id="2_616cq"]
+[ext_resource type="FontFile" uid="uid://bg5j0mhqg6ana" path="res://assets/fonts/PixelOperator8.ttf" id="3_ufcml"]
+[ext_resource type="Texture2D" uid="uid://cxnu5er4hdves" path="res://assets/sprites/resha.png" id="4_s8jcm"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_l1hgl")
+
+[node name="game_manager" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="margin_left" type="MarginContainer" parent="CanvasLayer/UI"]
+custom_minimum_size = Vector2(50, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+
+[node name="margin_right" type="MarginContainer" parent="CanvasLayer/UI"]
+custom_minimum_size = Vector2(50, 0)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(584.54, 328.702)
+scale = Vector2(0.499928, 0.499928)
+texture = ExtResource("2_616cq")
+
+[node name="label_score" type="Label" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 18.0
+offset_right = 269.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("3_ufcml")
+theme_override_font_sizes/font_size = 30
+text = "70000000"
+
+[node name="resha_button" type="TextureButton" parent="CanvasLayer"]
+offset_left = 183.0
+offset_top = -127.0
+offset_right = 983.0
+offset_bottom = 673.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(400, 400)
+texture_normal = ExtResource("4_s8jcm")
+stretch_mode = 3
+
+[connection signal="button_down" from="CanvasLayer/resha_button" to="." method="_on_resha_button_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/resha_button" to="." method="_on_resha_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/resha_button" to="." method="_on_resha_button_mouse_exited"]

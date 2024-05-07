@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4c31k4qyhccs"
-path="res://.godot/imported/mojga.jpg-50a9aaab560c7da06fe169e9c788daf2.ctex"
+uid="uid://bh5yt7gsrgpen"
+path="res://.godot/imported/background.jpg-09a9b3dd577528ecdb77a533b7627836.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mojga.jpg"
-dest_files=["res://.godot/imported/mojga.jpg-50a9aaab560c7da06fe169e9c788daf2.ctex"]
+source_file="res://assets/sprites/background.jpg"
+dest_files=["res://.godot/imported/background.jpg-09a9b3dd577528ecdb77a533b7627836.ctex"]
 
 [params]
 
