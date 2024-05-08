@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6wx80purdtp6"]
+[gd_scene load_steps=11 format=3 uid="uid://c6wx80purdtp6"]
 
 [ext_resource type="Script" path="res://scene/game/game.gd" id="1_l1hgl"]
+[ext_resource type="AudioStream" uid="uid://b7pdrolkhg4we" path="res://assets/sounds/r_hover.mp3" id="2_cc24a"]
 [ext_resource type="FontFile" uid="uid://oxc0kcukr4md" path="res://assets/fonts/wheaton capitals.ttf" id="3_gb5yl"]
+[ext_resource type="AudioStream" uid="uid://d10p82kxgy83o" path="res://assets/sounds/keys/key00.mp3" id="3_mjo1i"]
 [ext_resource type="Shader" path="res://shaders/outliner.gdshader" id="3_n2x16"]
 [ext_resource type="Texture2D" uid="uid://cxnu5er4hdves" path="res://assets/sprites/resha.png" id="4_s8jcm"]
+[ext_resource type="AudioStream" uid="uid://qlkvd6yvfy71" path="res://assets/sounds/keys/key01.mp3" id="4_w08ck"]
 [ext_resource type="BitMap" uid="uid://dvtef1n25m5vv" path="res://assets/sprites/resha_bmp.bmp" id="5_cblay"]
+[ext_resource type="FontFile" uid="uid://biity8tfrjsng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_xutba"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j7464"]
 shader = ExtResource("3_n2x16")
@@ -18,6 +22,18 @@ script = ExtResource("1_l1hgl")
 [node name="game_manager" type="Node" parent="."]
 unique_name_in_owner = true
 
+[node name="SFX" type="Node" parent="."]
+
+[node name="r_hover" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("2_cc24a")
+volume_db = 12.0
+
+[node name="key00" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("3_mjo1i")
+
+[node name="key01" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_w08ck")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
@@ -30,6 +46,7 @@ grow_vertical = 2
 color = Color(0.639216, 0.694118, 0.541176, 1)
 
 [node name="UI" type="CanvasLayer" parent="CanvasLayer"]
+layer = 2
 
 [node name="margin_left" type="MarginContainer" parent="CanvasLayer/UI"]
 custom_minimum_size = Vector2(50, 0)
@@ -47,11 +64,33 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="label_score" type="Label" parent="CanvasLayer"]
+[node name="text_speed" type="Label" parent="CanvasLayer/UI"]
+z_as_relative = false
+offset_left = 1184.0
+offset_top = 836.0
+offset_right = 1305.0
+offset_bottom = 898.0
+theme_override_colors/font_shadow_color = Color(0.203922, 0.305882, 0.254902, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("5_xutba")
+text = "speed:"
+
+[node name="text_speed_value" type="Label" parent="CanvasLayer/UI"]
+z_as_relative = false
+offset_left = 1288.0
+offset_top = 836.0
+offset_right = 1409.0
+offset_bottom = 898.0
+theme_override_colors/font_shadow_color = Color(0.203922, 0.305882, 0.254902, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("5_xutba")
+text = "000"
+
+[node name="label_score" type="Label" parent="CanvasLayer/UI"]
 texture_filter = 1
 offset_left = 14.0
 offset_top = 18.0
-offset_right = 269.0
+offset_right = 390.0
 offset_bottom = 112.0
 theme_override_colors/font_shadow_color = Color(0.203922, 0.305882, 0.254902, 1)
 theme_override_constants/shadow_outline_size = 14
@@ -65,7 +104,7 @@ offset_left = 335.0
 offset_top = -63.0
 offset_right = 1335.0
 offset_bottom = 937.0
-scale = Vector2(0.808, 0.8)
+scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(500, 500)
 texture_normal = ExtResource("4_s8jcm")
 texture_click_mask = ExtResource("5_cblay")
